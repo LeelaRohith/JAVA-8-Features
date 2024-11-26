@@ -1,0 +1,17 @@
+Predefined Functional Interfaces :
+
+Predicate
+Function
+Consumer
+Supplier
+
+Two Argument Predefined functional interfaces:
+BiPredicate
+BiFunction
+BiConsumer
+
+primitive Functional interfaces:
+
+IntPredicate
+IntFunction
+IntConsumer

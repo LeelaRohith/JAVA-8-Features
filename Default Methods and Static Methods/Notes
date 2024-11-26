@@ -1,0 +1,47 @@
+Until 1.7 :
+
+Every method present inside interface is public and abstract:
+void m1();
+public void m1();
+abstract void m1();
+public abstract void m1();
+
+In 1.8 : default and static methods are allowed
+In 1.9 : private,default,static are allowed
+
+Variables :
+
+Variables are public,static,final in all versions 
+
+DEFAULT METHOD or VITUAL EXTENSION METHOD or DEFENDER METHOD:
+
+-- Without disturbing the implementation classes of an interface we can add default methods to an interface
+-- Once interface is defined and implemented by a class we cannot add new methods.
+-- But we can add default methods
+-- Default method will already have implementation. So implemetation class of an interface need not implement it again
+-- We can override the default methods in implementation class or use the default method as it is
+-- Default methods provides protection to the implementation classes (defender).
+-- Object class methods should not be defined as default methods 
+Ex :
+
+interface interf
+{
+  void m1():
+  void m2();
+  default void m3()
+  {
+     System.out.println("Default method");
+  }
+}
+
+WHY JAVA DOES'NT SUPPORT MULTIPLE INHERITANCE WITH RESPECT TO CLASSES ? :
+
+If multiple parents have same methods, then child class will get confused which methods it should invoke.
+So java doesn't support multiple inheritance
+
+STATIC METHODS:
+
+--If a class conatins only static methods. It is better to place them in a interface. Because interface is light 
+  component whereas class is heavy component
+-- General static utility methods which are nowhere related to classes can be placed in interface. 
+   This will increase the performance.

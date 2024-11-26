@@ -1,0 +1,10 @@
+Method Reference :
+ 
+-- It is done using :: operator
+-- Syntax : obj::methodname ,classname::methodname (static methods)
+-- Only matching thing should be arguments must be same. Modifier, return type methods
+   can be different no problem
+   
+Constructor Reference :
+-- When functional interface method return an object, we can use constructor reference
+-- Syntax : Classname::new 

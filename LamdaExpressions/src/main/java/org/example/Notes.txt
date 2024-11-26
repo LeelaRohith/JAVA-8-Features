@@ -1,0 +1,85 @@
+0.1 The main Objective of java 8 features is to write concise code like other programming languages
+0.2 They enable functional programming
+Java 8 Features :
+1. Lamda Expressions
+2. Functional Interface
+3. Default methods and static methods
+4. Predefined Functional Interfaces : Predicate, Function, Consumer,Supplier etc..
+5. Double Colon Opertaor (::)
+   Method reference
+   Constructor reference
+6. Streams
+7. Date and Time API
+8. Optional class
+9. Nashorn Javascript Engine
+
+
+LAMBDA EXPRESSIONS
+
+--The main objective of functional programming is to bring the benefits of functional programmming into java
+--Definition : It is an anonymous function.
+-- Nameless, without return type, without modifiers
+
+HOW TO WRITE LAMBDA EXPRESSIONS ?
+
+-- "->" operator is used to specify the lambda expression
+Ex-1 :
+public void m1()
+{
+   System.out.println("Hello");
+}
+
+Equivalent lamda expression :
+()->{System.out.println("Hello");}
+
+Ex-2 :
+public void m1(int a,int b)
+{
+   System.out.println(a+b);
+}
+Equivalent lamda expression :
+(a,b)-> System.out.println(a+b);
+
+-- Compiler automatically guesses the return type of the parameters, so it is optional.
+
+Ex-3 :
+public int squareIt(int n)
+{
+  return n*n;
+}
+Equivalent lamda expression :
+(int n)->{return n*n;}
+(int n)->n*n;  //Without curly braces if we want to return something we can remove return
+(n)->n*n; //type is optional
+n->n*n; //only one parameter is there so paranthesis is optional
+-- If the body of the lambda expressions contain one line, then curly braces are optional.
+
+NOTE :
+Rule 1 : Without curly braces we cannnot use return keyword.Compiler will consider returned value automatically.
+Rule 2 : Within curly braces if we want to return some value compulsory we should use return statement
+n -> return n*n; invalid (Rule 1)
+n -> {return n*n;}; valid
+n -> {return n*n}; invalid (no semicolon)
+n -> {n*n;};invalid (Rule 2)
+n -> n*n; valid
+
+HOW TO CALL LAMBDA EXPRESSIONS
+
+-- To invoke the lamda expressions we should use functional interface
+-- Interfaces with single abstract method is called functional interface
+-- Functional interface can contain any number of default methods and static methods but should contain only one abstract method.
+-- @FunctionalInterface annotation is used to annotate interface.(optional not mandatory)
+
+Ex :
+interface interf
+{
+   public void m1();
+   default void m2()
+   {
+
+   }
+   static void m3()
+   {
+
+   }
+}
