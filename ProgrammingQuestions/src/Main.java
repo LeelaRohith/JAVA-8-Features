@@ -48,6 +48,18 @@ public class Main {
 	    
 	    System.out.println("Longest :"+longestString.get());
 	    
+	    //5.Second highest number
+	    List<Integer> numbers = Arrays.asList(3, 7, 2, 9, 4, 7, 9, 10);
+
+        
+        Optional<Integer> secondHighest = numbers.stream()
+            .distinct() // Remove duplicates
+            .sorted(Comparator.reverseOrder()) // Sort in descending order
+            .skip(1) // Skip the first element (highest)
+            .findFirst(); // Get the second element
+
+        secondHighest.ifPresent(num -> System.out.println("Second highest number: " + num));
+	    
 	    
 	    
 
